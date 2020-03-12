@@ -1,0 +1,2 @@
+# practical-tools
+socat cheatsheet - 
