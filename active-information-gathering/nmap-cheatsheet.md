@@ -12,7 +12,7 @@ nmap -sn 192.168.1.1-254
 ```
 nmap -sn 10.11.1.1-254 -oG ping-sweep.txt
 ```
-### Filtering Live Hosts
+### Filtering Only Live Hosts
 ```
 grep Up ping-sweep.txt | cut -d " " -f 2
 ```
