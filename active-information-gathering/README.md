@@ -11,7 +11,7 @@ It's important to develop an process on how you approach a pentest. This should 
 ## Finding Hosts (L3 Enumeration)
 Find out which hosts respond to pings in the network.
 ```
-nmap -sn 10.11.1.1-254 -oG ping-sweep.txt
+nmap -sn 192.1168.16.1-254 -oG ping-sweep.txt
 ```
 Filter out IP Addresses
 ```
@@ -21,4 +21,8 @@ cat ping-sweep.txt | grep "Up" | awk -F " " '{print $2}' > up-hosts.txt
 Be sure to have [AutoRecon](https://github.com/Tib3rius/AutoRecon) installed.
 ```angular2
 ./autorecon.py -t up-hosts.txt -o autorecon_scan
+```
+Using `nmap` to enumerate all ports as well as OS and Service detection.
+```angular2
+sudo nmap -p- -A 192.168.16.5
 ```
