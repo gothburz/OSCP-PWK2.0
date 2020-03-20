@@ -7,7 +7,7 @@ sudo python3 get-pip.py
 ```
 
 # Process
-It's important to develop an process on how you approach a pentest.
+It's important to develop an process on how you approach a pentest. This should include detailed note and screenshots in order to develop an organized report.
 ## Finding Hosts (L3 Enumeration)
 Find out which hosts respond to pings in the network.
 ```
@@ -17,7 +17,7 @@ Filter out IP Addresses
 ```
 cat ping-sweep.txt | grep "Up" | awk -F " " '{print $2}' > up-hosts.txt
 ```
-## Move (L4 Enumertion)
+## Port Enumeration (L4 Enumertion)
 Be sure to have [AutoRecon](https://github.com/Tib3rius/AutoRecon) installed.
 ```angular2
 ./autorecon.py -t up-hosts.txt -o autorecon_scan
